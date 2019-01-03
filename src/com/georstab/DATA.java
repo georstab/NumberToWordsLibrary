@@ -19,9 +19,6 @@ public class DATA {
         return hundreds;
     }
 
-    public String[] getThousands() {
-        return thousands;
-    }
 
     public String oneToNine[] =
 
@@ -83,12 +80,6 @@ public class DATA {
         "seven hundred",
         "eight hundred",
         "nine hundred"
-    };
-
-    public String thousands[] =
-    {
-
-
     };
 
 }

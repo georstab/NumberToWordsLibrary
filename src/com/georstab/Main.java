@@ -14,7 +14,8 @@ public class Main {
         String asdd = dada.returnIntegralWords();
         System.out.println(asdd);
 
-
+        IntegralToList dadda = new IntegralToList(input);
+        dadda.printIntegral();
 
     }
 

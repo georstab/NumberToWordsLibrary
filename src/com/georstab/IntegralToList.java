@@ -47,6 +47,7 @@ public class IntegralToList {
 
         }while (comperator !=0);
         Collections.reverse(listIntegral); return listIntegral;
+
     }
 
 

@@ -12,40 +12,33 @@ public class DemicalToList {
     private List<BigInteger> listDecimal = new ArrayList<>();
     private BigDecimal Input ;
 
-    public DemicalToList(BigDecimal theInput) {
-        this.Input = theInput;
-    }
-
-    // Needed vars
-    private MathContext MC = new MathContext(10, RoundingMode.UP);
     private BigDecimal TEN = new BigDecimal("10");
     private BigDecimal ONE = new BigDecimal("1");
     private BigDecimal ZERO = new BigDecimal("0");
     private int comperator;
 
+    public DemicalToList(BigDecimal theInput) {
+        this.Input = theInput;
+    }
+
 
     // METHOD : Extracts the Decimal part of the input and stores it into the listDecimal list digit by digit
     public List<BigInteger> DecimalToList(){
 
-        BigDecimal TheIntegral = new BigDecimal(Input.intValue());
-        BigDecimal decimal = Input.subtract(TheIntegral);
-
-        // Rounding of the decimal to 10 digits
-        decimal = decimal.setScale(10, RoundingMode.DOWN);
+        Input = Input.setScale(2,RoundingMode.HALF_UP);
+        Input = Input.remainder(ONE);
+        Input = Input.stripTrailingZeros();
 
 
-        // Here we do the following math:
-        // demical*10 - remainder to keep for example the 4 out of 0.456
-        // exe. 0.456*10 = 4.56 (4.56%1 = 0.56 ) ==> 4.56 - 0.56 = 4
         do {
 
-            decimal = decimal.multiply(TEN,MC);
+            Input = Input.multiply(TEN);
 
-            BigDecimal remainder = decimal.remainder(ONE,MC);
+            BigDecimal remainder = Input.remainder(ONE);
 
-            listDecimal.add(decimal.subtract(remainder).toBigInteger());
+            listDecimal.add(Input.subtract(remainder).toBigInteger());
 
-            decimal = remainder;
+            Input = remainder;
 
             comperator = ZERO.compareTo(remainder);
 
@@ -53,9 +46,10 @@ public class DemicalToList {
         return listDecimal;
     }
 
-    // METHOD : prints the elements of the listDecimal : for debugging reasons
+
+    //DEBUG
     public void printDecimal(){
-        listDecimal.forEach(System.out::println);
+        System.out.println(listDecimal);
     }
 
 }

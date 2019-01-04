@@ -44,8 +44,6 @@ public class IntegralListToWords {
             break;
 
 
-
-
         } return result;
 
     }
@@ -71,6 +69,7 @@ public class IntegralListToWords {
 
     }
 
+    // flawed logic here
     public String nineHundredNinetyNine(int pos){
         int a = IntegralData.get(pos).intValue();
         int b = IntegralData.get(pos+1).intValue();

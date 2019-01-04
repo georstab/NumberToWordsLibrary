@@ -32,11 +32,11 @@ public class IntegralToList {
         // Integral/10 ==> keep remainder*10
         // exe 123/10 = 12.3 ==> keep 0.3*10 = 3
         do {
-            TheIntegral = TheIntegral.divide(TEN,MathContext.DECIMAL128);
+            TheIntegral = TheIntegral.movePointLeft(1);
 
-            BigDecimal remainder = TheIntegral.remainder(ONE,MathContext.DECIMAL128);
+            BigDecimal remainder = TheIntegral.remainder(ONE);
 
-            listIntegral.add(remainder.multiply(TEN).toBigInteger());
+            listIntegral.add(remainder.movePointRight(1).toBigInteger());
 
             TheIntegral = TheIntegral.subtract(remainder);
 

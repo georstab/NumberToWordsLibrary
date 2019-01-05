@@ -1,7 +1,6 @@
 package com.georstab;
 
 import java.math.BigInteger;
-import java.math.MathContext;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -11,28 +10,23 @@ public class DemicalToList {
 
     private List<BigInteger> listDecimal = new ArrayList<>();
     private BigDecimal Input ;
-
-    private BigDecimal TEN = new BigDecimal("10");
     private BigDecimal ONE = new BigDecimal("1");
     private BigDecimal ZERO = new BigDecimal("0");
-    private int comperator;
+    private int comparator = 1;
 
     public DemicalToList(BigDecimal theInput) {
         this.Input = theInput;
     }
 
-
-    // METHOD : Extracts the Decimal part of the input and stores it into the listDecimal list digit by digit
     public List<BigInteger> DecimalToList(){
 
         Input = Input.setScale(2,RoundingMode.HALF_UP);
         Input = Input.remainder(ONE);
         Input = Input.stripTrailingZeros();
 
+        while (comparator != 0) {
 
-        do {
-
-            Input = Input.multiply(TEN);
+            Input = Input.movePointRight(1);
 
             BigDecimal remainder = Input.remainder(ONE);
 
@@ -40,12 +34,10 @@ public class DemicalToList {
 
             Input = remainder;
 
-            comperator = ZERO.compareTo(remainder);
-
-        }while (comperator != 0);
+            comparator = ZERO.compareTo(remainder);
+        }
         return listDecimal;
     }
-
 
     //DEBUG
     public void printDecimal(){

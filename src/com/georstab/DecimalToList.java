@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DemicalToList {
+public class DecimalToList {
 
     private List<BigInteger> listDecimal = new ArrayList<>();
     private BigDecimal Input ;
@@ -14,11 +14,11 @@ public class DemicalToList {
     private BigDecimal ZERO = new BigDecimal("0");
     private int comparator = 1;
 
-    public DemicalToList(BigDecimal theInput) {
+    public DecimalToList(BigDecimal theInput) {
         this.Input = theInput;
     }
 
-    public List<BigInteger> DecimalToList(){
+    public List<BigInteger> DecimalToListM(){
 
         Input = Input.setScale(2,RoundingMode.HALF_UP);
         Input = Input.remainder(ONE);

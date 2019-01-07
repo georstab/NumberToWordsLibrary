@@ -19,6 +19,9 @@ public class DATA {
         return hundreds;
     }
 
+    public String[] getNumerics(){
+        return Numerics;
+    }
 
     public String oneToNine[] =
 
@@ -80,6 +83,31 @@ public class DATA {
         "seven hundred",
         "eight hundred",
         "nine hundred"
+    };
+
+    public String Numerics[] =
+    {
+         "",
+         "Thousand",
+         "Million",
+         "Billion",
+         "Trillion",
+         "Quadrillion",
+         "Quintillion",
+         "Sextillion",
+         "Septillion",
+         "Octillion",
+         "Nonillion",
+         "Decillion",
+         "Undecillion",
+         "Duodecillion",
+         "Tredecillion",
+         "Quattuordecillion",
+         "Quindecillion",
+         "Sexdecillion",
+         "Septendecillion",
+         "Octodecillion",
+         "Novemdecillion"
     };
 
 }

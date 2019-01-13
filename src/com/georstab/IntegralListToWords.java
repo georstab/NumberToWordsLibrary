@@ -11,7 +11,6 @@ public class IntegralListToWords {
     private List<BigInteger> IntegralData;
 
 
-
     public IntegralListToWords(BigDecimal TheInput) {
         this.Input = TheInput;
         this.var = new IntegralToList(Input);

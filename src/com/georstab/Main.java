@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BigDecimal input = new BigDecimal("99999999999.56");
+        BigDecimal input = new BigDecimal("56485156989899.56");
 
         NumberToWordsLibrary var = new NumberToWordsLibrary(input);
 

@@ -15,7 +15,7 @@ public  NumberToWordsLibrary(BigDecimal TheInput){
 }
 
 public String GetWords(){
-    return integral.returnIntegralWords()+"Euros And "+decimal.ReturnDecimalWords()+" Cents";
+    return integral.returnIntegralWords()+" Euros And "+decimal.ReturnDecimalWords()+" Cents";
 }
 
 }
